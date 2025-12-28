@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^9.0.2"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

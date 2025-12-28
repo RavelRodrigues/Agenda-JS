@@ -1,0 +1,37 @@
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+    align-items: center;
+    background-color: rgb(2, 75, 75);
+    margin: 80px;
+    border-radius: 10px;
+    
+}
+
+.enviar{
+    margin-top: 10px;
+}
+h1{
+    color: aliceblue;
+}
+
+
+
+label{
+    color: aliceblue;
+}
+
+li{
+    color: aliceblue;
+}
+
