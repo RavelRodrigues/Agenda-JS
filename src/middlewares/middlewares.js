@@ -1,5 +1,7 @@
 export const middlewareGlobal = (req, res, next) =>{
-    res.locals.umaVariavelLocal = 'Este é o valor da variavel local';
+    res.locals.errors = req.flash('errors');
+    res.locals.success = req.flash('success');
+    res.locals.user = req.session.user;
     next();
 };
 
@@ -18,5 +20,14 @@ export const checkCsrfError = (err, req, res, next) => {
 
 export const csrfMiddleware = (req, res,next) =>{
     res.locals.csrfToken = req.csrfToken();
+    next();
+}
+
+export const loginRequired = (req, res, next) =>{
+    if(!req.session.user) {
+        req.flash('errors', 'Você precisa fazer o login para acessar os contatos');
+        req.session.save(() => res.redirect('/login/index'));
+        return;
+    }
     next();
 }

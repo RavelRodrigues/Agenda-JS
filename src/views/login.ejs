@@ -9,6 +9,8 @@
                 <h1 class="text-center">Criar conta ou Entrar</h1>
                 <p class="text-center lead">Faça login ou crie sua conta</p>
 
+                <%- include('includes/messages.ejs') %>
+
                 <div class="row">
                     <div class="col-lg">
                         <h4>Faça seu cadastro</h4>
@@ -18,7 +20,7 @@
                             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <div class="mb-3">
                                 <label>Seu e-mail</label>
-                                <input type="email" class="form-control" >
+                                <input type="email" class="form-control" name="email" >
                                 <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
                             </div>
 
@@ -40,7 +42,7 @@
                             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <div class="mb-3" >
                                 <label>Seu e-mail</label>
-                                <input type="email" class="form-control" >
+                                <input type="email" class="form-control" name="email" >
                                 <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
                             </div>
 

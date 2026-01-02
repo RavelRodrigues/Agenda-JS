@@ -1,0 +1,24 @@
+    <% if (locals.errors && errors.length > 0) { %>
+    <div class="row">
+        <div class="col my-3">
+            <div class="alert alert-danger">
+                <% errors.forEach(erro => { %>
+                   <p> <%= erro %> </p>
+               <% }); %>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+
+    <% if (locals.success && success.length > 0) { %>
+    <div class="row">
+        <div class="col my-3">
+            <div class="alert alert-success">
+                <% success.forEach(success => { %>
+                   <p> <%= success %> </p>
+               <% }); %>
+            </div>
+        </div>
+    </div>
+    <% } %>

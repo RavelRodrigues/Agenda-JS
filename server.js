@@ -26,7 +26,17 @@ import {middlewareGlobal, checkCsrfError, csrfMiddleware} from './src/middleware
 
 
 
-app.use(helmet());
+app.use(helmet(/*{
+    contentSecurityPolicy: {
+      directives: {
+        "default-src": ["'self'"],
+        "script-src": ["'self'", "cdn.jsdelivr.net"],
+        "style-src": ["'self'", "cdn.jsdelivr.net", "'unsafe-inline'"],
+        "connect-src": ["'self'", "cdn.jsdelivr.net"],
+        "img-src": ["'self'", "data:", "cdn.jsdelivr.net"],
+      },
+    },
+  }*/));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(express.static('./public'));
