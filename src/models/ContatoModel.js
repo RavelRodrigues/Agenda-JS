@@ -67,5 +67,27 @@ export function Contato(body) {
         
     }
 
+    // Metodos estaticos
+    Contato.buscaPorId = async function(id) {
+    if(typeof id !== 'string') return;
+    const contato = await ContatoModel.findById(id);
+    return contato;
+
+    }
+
+    Contato.buscaContatos = async function() {
+    const contatos = await ContatoModel.find()
+        .sort({criadoEm: -1});
+    return contatos;
+
+    }
+
+    Contato.deleteContato = async function(id) {
+    if(typeof id !== 'string') return;
+    const contato = await ContatoModel.findOneAndDelete({ _id: id});
+    return contato;
+
+    }
+
 
 

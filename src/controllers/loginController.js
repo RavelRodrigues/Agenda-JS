@@ -46,7 +46,7 @@ export const login =  async (req,res) =>{
     if(login.errors.length > 0){
         req.flash('errors', login.errors);
         req.session.save(function(){
-            return res.redirect('index');
+            return res.redirect('/');
         });
         return;
     }
@@ -54,7 +54,7 @@ export const login =  async (req,res) =>{
         req.flash('success', 'Logado com sucesso!');
         req.session.user = login.user;
         req.session.save(function(){
-            return res.redirect('index');
+            return res.redirect('/');
     });
     }
     
@@ -69,6 +69,7 @@ export const login =  async (req,res) =>{
 };
 
 export const logout = (req, res) =>{
-    req.session.destroy();
-    res.redirect('index');
+    req.session.destroy(() => {
+        res.redirect('/');
+    });
 }
