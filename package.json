@@ -4,6 +4,7 @@
     "bcryptjs": "^3.0.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^6.0.0",
+    "core-js": "^3.47.0",
     "csurf": "^1.11.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
@@ -11,6 +12,7 @@
     "express-session": "^1.18.2",
     "helmet": "^8.1.0",
     "mongoose": "^9.0.2",
+    "regenerator-runtime": "^0.14.1",
     "validator": "^13.15.26"
   },
   "scripts": {
@@ -18,7 +20,12 @@
     "dev": "webpack --mode development --watch"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
     "nodemon": "^3.1.11",
+    "style-loader": "^4.0.0",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
   }
