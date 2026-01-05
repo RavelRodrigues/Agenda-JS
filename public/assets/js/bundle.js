@@ -47,6 +47,7 @@ var Login = /*#__PURE__*/function () {
       var emailInput = el.querySelector('input[name="email"]');
       var passwordInput = el.querySelector('input[name="password"]');
       var error = false;
+      if (!emailInput || !passwordInput) return el.submit();
       if (!validator__WEBPACK_IMPORTED_MODULE_0__.isEmail(emailInput.value)) {
         alert('E-mail inválido');
         error = true;
